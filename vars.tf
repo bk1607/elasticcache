@@ -6,3 +6,4 @@ variable "cache_nodes" {}
 variable "engine_version" {}
 variable "parameter_group" {}
 variable "subnet_group" {}
+variable "db_subnet_ids" {}

@@ -9,13 +9,11 @@ resource "aws_elasticache_cluster" "example" {
   subnet_group_name    = aws_elasticache_subnet_group.test.name
 }
 
-locals {
-  db_subnet_ids =  data.aws_subnets.vpc_subnets.ids
-}
+
 
 resource "aws_elasticache_subnet_group" "test" {
   name       = "${var.env}-${var.subnet_group}"
-  subnet_ids = [local.db_subnet_ids]
+  subnet_ids = var.db_subnet_ids
   tags = {
     Name = "My redis subnet group"
   }

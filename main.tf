@@ -1,5 +1,5 @@
 resource "aws_elasticache_cluster" "example" {
-  cluster_id           = "${var.env}-{var.cluster_name}"
+  cluster_id           = "${var.env}-${var.cluster_name}"
   engine               = var.engine
   node_type            = var.node_type
   num_cache_nodes      = var.cache_nodes
